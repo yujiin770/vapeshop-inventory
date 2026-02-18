@@ -23,9 +23,10 @@ Partial Class AuditForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.dgvProducts = New System.Windows.Forms.DataGridView()
-        Me.btnStartAudit = New System.Windows.Forms.Button()
-        Me.btnViewReports = New System.Windows.Forms.Button()
+        Me.btnPerformNewAudit = New System.Windows.Forms.Button()
+        Me.btnShowAuditHistory = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnShowProductsForAudit = New System.Windows.Forms.Button()
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -38,25 +39,25 @@ Partial Class AuditForm
         Me.dgvProducts.Size = New System.Drawing.Size(297, 170)
         Me.dgvProducts.TabIndex = 0
         '
-        'btnStartAudit
+        'btnPerformNewAudit
         '
-        Me.btnStartAudit.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnStartAudit.Location = New System.Drawing.Point(82, 291)
-        Me.btnStartAudit.Name = "btnStartAudit"
-        Me.btnStartAudit.Size = New System.Drawing.Size(106, 50)
-        Me.btnStartAudit.TabIndex = 1
-        Me.btnStartAudit.Text = "Audit"
-        Me.btnStartAudit.UseVisualStyleBackColor = True
+        Me.btnPerformNewAudit.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPerformNewAudit.Location = New System.Drawing.Point(38, 280)
+        Me.btnPerformNewAudit.Name = "btnPerformNewAudit"
+        Me.btnPerformNewAudit.Size = New System.Drawing.Size(106, 50)
+        Me.btnPerformNewAudit.TabIndex = 1
+        Me.btnPerformNewAudit.Text = "Audit"
+        Me.btnPerformNewAudit.UseVisualStyleBackColor = True
         '
-        'btnViewReports
+        'btnShowAuditHistory
         '
-        Me.btnViewReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnViewReports.Location = New System.Drawing.Point(273, 291)
-        Me.btnViewReports.Name = "btnViewReports"
-        Me.btnViewReports.Size = New System.Drawing.Size(106, 50)
-        Me.btnViewReports.TabIndex = 2
-        Me.btnViewReports.Text = "Reports"
-        Me.btnViewReports.UseVisualStyleBackColor = True
+        Me.btnShowAuditHistory.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnShowAuditHistory.Location = New System.Drawing.Point(311, 295)
+        Me.btnShowAuditHistory.Name = "btnShowAuditHistory"
+        Me.btnShowAuditHistory.Size = New System.Drawing.Size(106, 50)
+        Me.btnShowAuditHistory.TabIndex = 2
+        Me.btnShowAuditHistory.Text = "Reports"
+        Me.btnShowAuditHistory.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -68,15 +69,26 @@ Partial Class AuditForm
         Me.Button1.Text = "Back"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'btnShowProductsForAudit
+        '
+        Me.btnShowProductsForAudit.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnShowProductsForAudit.Location = New System.Drawing.Point(175, 280)
+        Me.btnShowProductsForAudit.Name = "btnShowProductsForAudit"
+        Me.btnShowProductsForAudit.Size = New System.Drawing.Size(106, 50)
+        Me.btnShowProductsForAudit.TabIndex = 11
+        Me.btnShowProductsForAudit.Text = "Products for Audit"
+        Me.btnShowProductsForAudit.UseVisualStyleBackColor = True
+        '
         'AuditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSkyBlue
         Me.ClientSize = New System.Drawing.Size(479, 357)
+        Me.Controls.Add(Me.btnShowProductsForAudit)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btnViewReports)
-        Me.Controls.Add(Me.btnStartAudit)
+        Me.Controls.Add(Me.btnShowAuditHistory)
+        Me.Controls.Add(Me.btnPerformNewAudit)
         Me.Controls.Add(Me.dgvProducts)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "AuditForm"
@@ -87,7 +99,8 @@ Partial Class AuditForm
 
     End Sub
     Friend WithEvents dgvProducts As System.Windows.Forms.DataGridView
-    Friend WithEvents btnStartAudit As System.Windows.Forms.Button
-    Friend WithEvents btnViewReports As System.Windows.Forms.Button
+    Friend WithEvents btnPerformNewAudit As System.Windows.Forms.Button
+    Friend WithEvents btnShowAuditHistory As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnShowProductsForAudit As System.Windows.Forms.Button
 End Class

@@ -16,7 +16,7 @@ Public Class AuditForm
         End Using
     End Sub
 
-    Private Sub btnStartAudit_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnStartAudit.Click
+    Private Sub btnStartAudit_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnPerformNewAudit.Click
         If dgvProducts.SelectedRows.Count = 0 Then
             MessageBox.Show("Select a product to audit.")
             Return

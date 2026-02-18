@@ -14,3 +14,6 @@ c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopI
 c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.xml
 c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.pdb
 C:\Users\clare\OneDrive\Pictures\Documents\Visual Studio 2010\Projects\VapeShopInventory\VapeShopInventory\bin\Debug\Guna.UI2.dll
+D:\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.exe
+D:\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.xml
+D:\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.pdb

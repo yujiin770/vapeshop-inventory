@@ -22,24 +22,32 @@ Partial Class DashboardForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblWelcome = New System.Windows.Forms.Label()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
         Me.btnReports = New Guna.UI2.WinForms.Guna2Button()
         Me.btnNewAudit = New Guna.UI2.WinForms.Guna2Button()
         Me.btnAdjustStock = New Guna.UI2.WinForms.Guna2Button()
         Me.btnProducts = New Guna.UI2.WinForms.Guna2Button()
         Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblLowStockAlert = New System.Windows.Forms.Label()
+        Me.lblTotalProducts = New System.Windows.Forms.Label()
+        Me.lblTotalStock = New System.Windows.Forms.Label()
+        Me.lblOverstockCount = New System.Windows.Forms.Label()
+        Me.dgvRecentActivity = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Guna2Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvRecentActivity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblWelcome
         '
         Me.lblWelcome.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblWelcome.Location = New System.Drawing.Point(39, 104)
+        Me.lblWelcome.Location = New System.Drawing.Point(35, 86)
         Me.lblWelcome.Name = "lblWelcome"
         Me.lblWelcome.Size = New System.Drawing.Size(170, 35)
         Me.lblWelcome.TabIndex = 0
@@ -48,13 +56,13 @@ Partial Class DashboardForm
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(103, Byte), Integer))
         Me.Guna2Panel1.BorderRadius = 12
+        Me.Guna2Panel1.Controls.Add(Me.Label3)
         Me.Guna2Panel1.Controls.Add(Me.btnLogout)
         Me.Guna2Panel1.Controls.Add(Me.btnReports)
         Me.Guna2Panel1.Controls.Add(Me.btnNewAudit)
         Me.Guna2Panel1.Controls.Add(Me.btnAdjustStock)
         Me.Guna2Panel1.Controls.Add(Me.btnProducts)
         Me.Guna2Panel1.Controls.Add(Me.btnDashboard)
-        Me.Guna2Panel1.Controls.Add(Me.PictureBox1)
         Me.Guna2Panel1.Controls.Add(Me.lblWelcome)
         Me.Guna2Panel1.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2Panel1.Location = New System.Drawing.Point(1, 1)
@@ -62,6 +70,17 @@ Partial Class DashboardForm
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(240, 656)
         Me.Guna2Panel1.TabIndex = 7
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(24, 29)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(198, 32)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "C  n C VapeShop"
         '
         'btnLogout
         '
@@ -219,15 +238,111 @@ Partial Class DashboardForm
         Me.btnDashboard.Text = "Dashboard"
         Me.btnDashboard.TextOffset = New System.Drawing.Point(5, 0)
         '
-        'PictureBox1
+        'lblLowStockAlert
         '
-        Me.PictureBox1.Image = Global.VapeShopInventory.My.Resources.Resources.logovape
-        Me.PictureBox1.Location = New System.Drawing.Point(54, 17)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(138, 69)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 9
-        Me.PictureBox1.TabStop = False
+        Me.lblLowStockAlert.AutoSize = True
+        Me.lblLowStockAlert.Font = New System.Drawing.Font("Segoe UI", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLowStockAlert.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.lblLowStockAlert.Location = New System.Drawing.Point(609, 126)
+        Me.lblLowStockAlert.Name = "lblLowStockAlert"
+        Me.lblLowStockAlert.Size = New System.Drawing.Size(179, 32)
+        Me.lblLowStockAlert.TabIndex = 9
+        Me.lblLowStockAlert.Text = "Loading Alerts"
+        Me.lblLowStockAlert.Visible = False
+        '
+        'lblTotalProducts
+        '
+        Me.lblTotalProducts.AutoSize = True
+        Me.lblTotalProducts.Font = New System.Drawing.Font("Segoe UI", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalProducts.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.lblTotalProducts.Location = New System.Drawing.Point(273, 45)
+        Me.lblTotalProducts.Name = "lblTotalProducts"
+        Me.lblTotalProducts.Size = New System.Drawing.Size(179, 32)
+        Me.lblTotalProducts.TabIndex = 10
+        Me.lblTotalProducts.Text = "Loading Alerts"
+        Me.lblTotalProducts.Visible = False
+        '
+        'lblTotalStock
+        '
+        Me.lblTotalStock.AutoSize = True
+        Me.lblTotalStock.Font = New System.Drawing.Font("Segoe UI", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalStock.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.lblTotalStock.Location = New System.Drawing.Point(282, 126)
+        Me.lblTotalStock.Name = "lblTotalStock"
+        Me.lblTotalStock.Size = New System.Drawing.Size(179, 32)
+        Me.lblTotalStock.TabIndex = 11
+        Me.lblTotalStock.Text = "Loading Alerts"
+        Me.lblTotalStock.Visible = False
+        '
+        'lblOverstockCount
+        '
+        Me.lblOverstockCount.AutoSize = True
+        Me.lblOverstockCount.Font = New System.Drawing.Font("Segoe UI", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOverstockCount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.lblOverstockCount.Location = New System.Drawing.Point(609, 45)
+        Me.lblOverstockCount.Name = "lblOverstockCount"
+        Me.lblOverstockCount.Size = New System.Drawing.Size(179, 32)
+        Me.lblOverstockCount.TabIndex = 12
+        Me.lblOverstockCount.Text = "Loading Alerts"
+        Me.lblOverstockCount.Visible = False
+        '
+        'dgvRecentActivity
+        '
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.dgvRecentActivity.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvRecentActivity.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvRecentActivity.BackgroundColor = System.Drawing.Color.White
+        Me.dgvRecentActivity.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvRecentActivity.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvRecentActivity.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRecentActivity.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvRecentActivity.ColumnHeadersHeight = 4
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRecentActivity.DefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvRecentActivity.EnableHeadersVisualStyles = False
+        Me.dgvRecentActivity.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvRecentActivity.Location = New System.Drawing.Point(266, 202)
+        Me.dgvRecentActivity.Name = "dgvRecentActivity"
+        Me.dgvRecentActivity.RowHeadersVisible = False
+        Me.dgvRecentActivity.RowTemplate.Height = 24
+        Me.dgvRecentActivity.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvRecentActivity.Size = New System.Drawing.Size(745, 383)
+        Me.dgvRecentActivity.TabIndex = 13
+        Me.dgvRecentActivity.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
+        Me.dgvRecentActivity.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.dgvRecentActivity.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.dgvRecentActivity.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.dgvRecentActivity.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.dgvRecentActivity.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.dgvRecentActivity.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.dgvRecentActivity.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvRecentActivity.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvRecentActivity.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvRecentActivity.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.dgvRecentActivity.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.dgvRecentActivity.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.dgvRecentActivity.ThemeStyle.HeaderStyle.Height = 4
+        Me.dgvRecentActivity.ThemeStyle.ReadOnly = False
+        Me.dgvRecentActivity.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.dgvRecentActivity.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgvRecentActivity.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.dgvRecentActivity.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.dgvRecentActivity.ThemeStyle.RowsStyle.Height = 24
+        Me.dgvRecentActivity.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgvRecentActivity.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
         'DashboardForm
         '
@@ -235,23 +350,35 @@ Partial Class DashboardForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1032, 656)
+        Me.Controls.Add(Me.dgvRecentActivity)
+        Me.Controls.Add(Me.lblOverstockCount)
+        Me.Controls.Add(Me.lblTotalStock)
+        Me.Controls.Add(Me.lblTotalProducts)
+        Me.Controls.Add(Me.lblLowStockAlert)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "DashboardForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DashboardForm"
         Me.Guna2Panel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel1.PerformLayout()
+        CType(Me.dgvRecentActivity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents lblWelcome As System.Windows.Forms.Label
     Friend WithEvents btnDashboard As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents btnProducts As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnAdjustStock As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnNewAudit As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnReports As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnLogout As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lblLowStockAlert As System.Windows.Forms.Label
+    Friend WithEvents lblTotalProducts As System.Windows.Forms.Label
+    Friend WithEvents lblTotalStock As System.Windows.Forms.Label
+    Friend WithEvents lblOverstockCount As System.Windows.Forms.Label
+    Friend WithEvents dgvRecentActivity As Guna.UI2.WinForms.Guna2DataGridView
 End Class

@@ -136,7 +136,7 @@ Partial Class AdjustStockForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.ClientSize = New System.Drawing.Size(466, 260)
+        Me.ClientSize = New System.Drawing.Size(608, 494)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.Label3)
