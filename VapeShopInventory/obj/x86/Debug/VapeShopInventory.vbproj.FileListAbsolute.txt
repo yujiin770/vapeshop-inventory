@@ -5,7 +5,6 @@ c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopI
 c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.Resources.resources
 c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.ProductEditForm.resources
 c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.ProductListForm.resources
-c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.ReportsForm.resources
 c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.vbproj.GenerateResource.Cache
 c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopInventory\VapeShopInventory\bin\Debug\VapeShopInventory.exe
 c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopInventory\VapeShopInventory\bin\Debug\VapeShopInventory.pdb
@@ -14,6 +13,8 @@ c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopI
 c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.xml
 c:\users\clare\onedrive\pictures\documents\visual studio 2010\Projects\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.pdb
 C:\Users\clare\OneDrive\Pictures\Documents\Visual Studio 2010\Projects\VapeShopInventory\VapeShopInventory\bin\Debug\Guna.UI2.dll
-D:\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.exe
-D:\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.xml
-D:\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.pdb
+C:\Users\clare\OneDrive\Pictures\Documents\Visual Studio 2010\Projects\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.UserManagementForm.resources
+C:\Users\clare\OneDrive\Pictures\Documents\Visual Studio 2010\Projects\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.ReportsForm.resources
+E:\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.exe
+E:\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.xml
+E:\VapeShopInventory\VapeShopInventory\obj\x86\Debug\VapeShopInventory.pdb

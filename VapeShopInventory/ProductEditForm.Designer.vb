@@ -42,7 +42,7 @@ Partial Class ProductEditForm
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(145, 66)
+        Me.txtName.Location = New System.Drawing.Point(187, 62)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(134, 23)
         Me.txtName.TabIndex = 0
@@ -51,7 +51,8 @@ Partial Class ProductEditForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(52, 66)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label1.Location = New System.Drawing.Point(94, 62)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 17)
         Me.Label1.TabIndex = 1
@@ -59,7 +60,7 @@ Partial Class ProductEditForm
         '
         'txtDescription
         '
-        Me.txtDescription.Location = New System.Drawing.Point(145, 103)
+        Me.txtDescription.Location = New System.Drawing.Point(187, 99)
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.Size = New System.Drawing.Size(134, 23)
         Me.txtDescription.TabIndex = 2
@@ -68,7 +69,8 @@ Partial Class ProductEditForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(15, 103)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Location = New System.Drawing.Point(57, 99)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(101, 17)
         Me.Label2.TabIndex = 3
@@ -76,7 +78,7 @@ Partial Class ProductEditForm
         '
         'nudQuantity
         '
-        Me.nudQuantity.Location = New System.Drawing.Point(145, 146)
+        Me.nudQuantity.Location = New System.Drawing.Point(187, 142)
         Me.nudQuantity.Name = "nudQuantity"
         Me.nudQuantity.Size = New System.Drawing.Size(135, 23)
         Me.nudQuantity.TabIndex = 4
@@ -85,7 +87,8 @@ Partial Class ProductEditForm
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(29, 146)
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label3.Location = New System.Drawing.Point(71, 142)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(80, 17)
         Me.Label3.TabIndex = 5
@@ -93,7 +96,7 @@ Partial Class ProductEditForm
         '
         'nudMinLevel
         '
-        Me.nudMinLevel.Location = New System.Drawing.Point(145, 185)
+        Me.nudMinLevel.Location = New System.Drawing.Point(187, 181)
         Me.nudMinLevel.Name = "nudMinLevel"
         Me.nudMinLevel.Size = New System.Drawing.Size(135, 23)
         Me.nudMinLevel.TabIndex = 6
@@ -102,7 +105,8 @@ Partial Class ProductEditForm
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(29, 182)
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(71, 178)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(83, 17)
         Me.Label4.TabIndex = 7
@@ -110,7 +114,7 @@ Partial Class ProductEditForm
         '
         'nudMaxLevel
         '
-        Me.nudMaxLevel.Location = New System.Drawing.Point(145, 222)
+        Me.nudMaxLevel.Location = New System.Drawing.Point(187, 218)
         Me.nudMaxLevel.Name = "nudMaxLevel"
         Me.nudMaxLevel.Size = New System.Drawing.Size(135, 23)
         Me.nudMaxLevel.TabIndex = 8
@@ -119,7 +123,8 @@ Partial Class ProductEditForm
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(29, 222)
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(71, 218)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(87, 17)
         Me.Label5.TabIndex = 9
@@ -148,18 +153,19 @@ Partial Class ProductEditForm
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(268, 12)
+        Me.Button1.Location = New System.Drawing.Point(282, 274)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(67, 34)
         Me.Button1.TabIndex = 12
         Me.Button1.Text = "Back"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'ProductEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(21, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(378, 332)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnCancel)
@@ -175,6 +181,7 @@ Partial Class ProductEditForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtName)
         Me.Font = New System.Drawing.Font("Verdana", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ProductEditForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ProductEditForm"

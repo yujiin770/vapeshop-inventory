@@ -22,21 +22,27 @@ Partial Class ProductListForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.dgvProducts = New System.Windows.Forms.DataGridView()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnEdit = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnRefresh = New System.Windows.Forms.Button()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblWelcome = New System.Windows.Forms.Label()
+        Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btnUserManagement = New Guna.UI2.WinForms.Guna2Button()
         Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
         Me.btnReports = New Guna.UI2.WinForms.Guna2Button()
         Me.btnNewAudit = New Guna.UI2.WinForms.Guna2Button()
         Me.btnAdjustStock = New Guna.UI2.WinForms.Guna2Button()
         Me.btnProducts = New Guna.UI2.WinForms.Guna2Button()
         Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
-        Me.lblWelcome = New System.Windows.Forms.Label()
-        Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerColorReset = New System.Windows.Forms.Timer(Me.components)
+        Me.lbltime = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnLogin = New Guna.UI2.WinForms.Guna2Button()
+        Me.EditBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.DeleteBtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.RefreshBtn = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -44,52 +50,17 @@ Partial Class ProductListForm
         'dgvProducts
         '
         Me.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProducts.Location = New System.Drawing.Point(253, 117)
+        Me.dgvProducts.Location = New System.Drawing.Point(253, 135)
         Me.dgvProducts.Name = "dgvProducts"
         Me.dgvProducts.RowTemplate.Height = 24
         Me.dgvProducts.Size = New System.Drawing.Size(767, 423)
         Me.dgvProducts.TabIndex = 0
         '
-        'btnAdd
-        '
-        Me.btnAdd.Location = New System.Drawing.Point(432, 560)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(89, 40)
-        Me.btnAdd.TabIndex = 1
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = True
-        '
-        'btnEdit
-        '
-        Me.btnEdit.Location = New System.Drawing.Point(527, 560)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(89, 40)
-        Me.btnEdit.TabIndex = 2
-        Me.btnEdit.Text = "Edit"
-        Me.btnEdit.UseVisualStyleBackColor = True
-        '
-        'btnDelete
-        '
-        Me.btnDelete.Location = New System.Drawing.Point(622, 560)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(89, 40)
-        Me.btnDelete.TabIndex = 3
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = True
-        '
-        'btnRefresh
-        '
-        Me.btnRefresh.Location = New System.Drawing.Point(717, 560)
-        Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(89, 40)
-        Me.btnRefresh.TabIndex = 4
-        Me.btnRefresh.Text = "Refresh"
-        Me.btnRefresh.UseVisualStyleBackColor = True
-        '
         'Guna2Panel1
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(103, Byte), Integer))
         Me.Guna2Panel1.BorderRadius = 12
+        Me.Guna2Panel1.Controls.Add(Me.btnUserManagement)
         Me.Guna2Panel1.Controls.Add(Me.Label3)
         Me.Guna2Panel1.Controls.Add(Me.btnLogout)
         Me.Guna2Panel1.Controls.Add(Me.btnReports)
@@ -116,6 +87,67 @@ Partial Class ProductListForm
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "C  n C VapeShop"
         '
+        'lblWelcome
+        '
+        Me.lblWelcome.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblWelcome.Location = New System.Drawing.Point(4, 86)
+        Me.lblWelcome.Name = "lblWelcome"
+        Me.lblWelcome.Size = New System.Drawing.Size(230, 35)
+        Me.lblWelcome.TabIndex = 0
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSearch.DefaultText = ""
+        Me.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSearch.DisabledState.Parent = Me.txtSearch
+        Me.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSearch.FocusedState.Parent = Me.txtSearch
+        Me.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSearch.HoverState.Parent = Me.txtSearch
+        Me.txtSearch.Location = New System.Drawing.Point(253, 77)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSearch.PlaceholderText = "Search Products"
+        Me.txtSearch.SelectedText = ""
+        Me.txtSearch.ShadowDecoration.Parent = Me.txtSearch
+        Me.txtSearch.Size = New System.Drawing.Size(755, 42)
+        Me.txtSearch.TabIndex = 13
+        '
+        'btnUserManagement
+        '
+        Me.btnUserManagement.Animated = True
+        Me.btnUserManagement.BorderColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.btnUserManagement.BorderRadius = 6
+        Me.btnUserManagement.BorderThickness = 2
+        Me.btnUserManagement.CheckedState.Parent = Me.btnUserManagement
+        Me.btnUserManagement.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnUserManagement.CustomImages.Parent = Me.btnUserManagement
+        Me.btnUserManagement.FillColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.btnUserManagement.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUserManagement.ForeColor = System.Drawing.Color.White
+        Me.btnUserManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.btnUserManagement.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.btnUserManagement.HoverState.Image = Global.VapeShopInventory.My.Resources.Resources.user2
+        Me.btnUserManagement.HoverState.Parent = Me.btnUserManagement
+        Me.btnUserManagement.Image = Global.VapeShopInventory.My.Resources.Resources.user1
+        Me.btnUserManagement.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnUserManagement.ImageOffset = New System.Drawing.Point(15, 0)
+        Me.btnUserManagement.ImageSize = New System.Drawing.Size(25, 25)
+        Me.btnUserManagement.Location = New System.Drawing.Point(6, 506)
+        Me.btnUserManagement.Name = "btnUserManagement"
+        Me.btnUserManagement.ShadowDecoration.Parent = Me.btnUserManagement
+        Me.btnUserManagement.Size = New System.Drawing.Size(231, 54)
+        Me.btnUserManagement.TabIndex = 14
+        Me.btnUserManagement.Tag = ""
+        Me.btnUserManagement.Text = "User Management"
+        Me.btnUserManagement.TextOffset = New System.Drawing.Point(8, 0)
+        '
         'btnLogout
         '
         Me.btnLogout.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer))
@@ -133,7 +165,7 @@ Partial Class ProductListForm
         Me.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnLogout.ImageOffset = New System.Drawing.Point(15, 0)
         Me.btnLogout.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btnLogout.Location = New System.Drawing.Point(8, 579)
+        Me.btnLogout.Location = New System.Drawing.Point(9, 592)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.ShadowDecoration.Parent = Me.btnLogout
         Me.btnLogout.Size = New System.Drawing.Size(227, 54)
@@ -259,12 +291,15 @@ Partial Class ProductListForm
         Me.btnDashboard.FillColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(103, Byte), Integer))
         Me.btnDashboard.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDashboard.ForeColor = System.Drawing.Color.White
+        Me.btnDashboard.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.btnDashboard.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(103, Byte), Integer))
+        Me.btnDashboard.HoverState.Image = Global.VapeShopInventory.My.Resources.Resources.category
         Me.btnDashboard.HoverState.Parent = Me.btnDashboard
         Me.btnDashboard.Image = Global.VapeShopInventory.My.Resources.Resources.DashboardIcon1
         Me.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnDashboard.ImageOffset = New System.Drawing.Point(15, 0)
         Me.btnDashboard.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnDashboard.Location = New System.Drawing.Point(4, 146)
+        Me.btnDashboard.Location = New System.Drawing.Point(4, 147)
         Me.btnDashboard.Name = "btnDashboard"
         Me.btnDashboard.ShadowDecoration.Parent = Me.btnDashboard
         Me.btnDashboard.Size = New System.Drawing.Size(231, 54)
@@ -272,50 +307,130 @@ Partial Class ProductListForm
         Me.btnDashboard.Text = "Dashboard"
         Me.btnDashboard.TextOffset = New System.Drawing.Point(5, 0)
         '
-        'lblWelcome
+        'lbltime
         '
-        Me.lblWelcome.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWelcome.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.lblWelcome.Location = New System.Drawing.Point(4, 86)
-        Me.lblWelcome.Name = "lblWelcome"
-        Me.lblWelcome.Size = New System.Drawing.Size(230, 35)
-        Me.lblWelcome.TabIndex = 0
+        Me.lbltime.AutoSize = True
+        Me.lbltime.Font = New System.Drawing.Font("Segoe UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltime.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.lbltime.Location = New System.Drawing.Point(713, 27)
+        Me.lbltime.Name = "lbltime"
+        Me.lbltime.Size = New System.Drawing.Size(137, 28)
+        Me.lbltime.TabIndex = 23
+        Me.lbltime.Text = "DASHBOARD"
         '
-        'txtSearch
+        'Label4
         '
-        Me.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSearch.DefaultText = ""
-        Me.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSearch.DisabledState.Parent = Me.txtSearch
-        Me.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearch.FocusedState.Parent = Me.txtSearch
-        Me.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSearch.HoverState.Parent = Me.txtSearch
-        Me.txtSearch.Location = New System.Drawing.Point(253, 48)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSearch.PlaceholderText = "Search Products"
-        Me.txtSearch.SelectedText = ""
-        Me.txtSearch.ShadowDecoration.Parent = Me.txtSearch
-        Me.txtSearch.Size = New System.Drawing.Size(533, 42)
-        Me.txtSearch.TabIndex = 13
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(61, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(257, 18)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(177, 41)
+        Me.Label4.TabIndex = 24
+        Me.Label4.Text = "PRODUCTS"
+        '
+        'btnLogin
+        '
+        Me.btnLogin.Animated = True
+        Me.btnLogin.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnLogin.BorderRadius = 12
+        Me.btnLogin.BorderThickness = 2
+        Me.btnLogin.CheckedState.Parent = Me.btnLogin
+        Me.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLogin.CustomImages.Parent = Me.btnLogin
+        Me.btnLogin.FillColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.btnLogin.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnLogin.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnLogin.HoverState.ForeColor = System.Drawing.Color.White
+        Me.btnLogin.HoverState.Parent = Me.btnLogin
+        Me.btnLogin.Location = New System.Drawing.Point(377, 578)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.ShadowDecoration.Parent = Me.btnLogin
+        Me.btnLogin.Size = New System.Drawing.Size(105, 52)
+        Me.btnLogin.TabIndex = 25
+        Me.btnLogin.Text = "ADD"
+        '
+        'EditBtn
+        '
+        Me.EditBtn.Animated = True
+        Me.EditBtn.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.EditBtn.BorderRadius = 12
+        Me.EditBtn.BorderThickness = 2
+        Me.EditBtn.CheckedState.Parent = Me.EditBtn
+        Me.EditBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.EditBtn.CustomImages.Parent = Me.EditBtn
+        Me.EditBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.EditBtn.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EditBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.EditBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.EditBtn.HoverState.ForeColor = System.Drawing.Color.White
+        Me.EditBtn.HoverState.Parent = Me.EditBtn
+        Me.EditBtn.Location = New System.Drawing.Point(504, 578)
+        Me.EditBtn.Name = "EditBtn"
+        Me.EditBtn.ShadowDecoration.Parent = Me.EditBtn
+        Me.EditBtn.Size = New System.Drawing.Size(105, 52)
+        Me.EditBtn.TabIndex = 26
+        Me.EditBtn.Text = "EDIT"
+        '
+        'DeleteBtn
+        '
+        Me.DeleteBtn.Animated = True
+        Me.DeleteBtn.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.DeleteBtn.BorderRadius = 12
+        Me.DeleteBtn.BorderThickness = 2
+        Me.DeleteBtn.CheckedState.Parent = Me.DeleteBtn
+        Me.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DeleteBtn.CustomImages.Parent = Me.DeleteBtn
+        Me.DeleteBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.DeleteBtn.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DeleteBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.DeleteBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DeleteBtn.HoverState.ForeColor = System.Drawing.Color.White
+        Me.DeleteBtn.HoverState.Parent = Me.DeleteBtn
+        Me.DeleteBtn.Location = New System.Drawing.Point(637, 578)
+        Me.DeleteBtn.Name = "DeleteBtn"
+        Me.DeleteBtn.ShadowDecoration.Parent = Me.DeleteBtn
+        Me.DeleteBtn.Size = New System.Drawing.Size(105, 52)
+        Me.DeleteBtn.TabIndex = 27
+        Me.DeleteBtn.Text = "DELETE"
+        '
+        'RefreshBtn
+        '
+        Me.RefreshBtn.Animated = True
+        Me.RefreshBtn.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RefreshBtn.BorderRadius = 12
+        Me.RefreshBtn.BorderThickness = 2
+        Me.RefreshBtn.CheckedState.Parent = Me.RefreshBtn
+        Me.RefreshBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RefreshBtn.CustomImages.Parent = Me.RefreshBtn
+        Me.RefreshBtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(21, Byte), Integer))
+        Me.RefreshBtn.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RefreshBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RefreshBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RefreshBtn.HoverState.ForeColor = System.Drawing.Color.White
+        Me.RefreshBtn.HoverState.Parent = Me.RefreshBtn
+        Me.RefreshBtn.Location = New System.Drawing.Point(765, 578)
+        Me.RefreshBtn.Name = "RefreshBtn"
+        Me.RefreshBtn.ShadowDecoration.Parent = Me.RefreshBtn
+        Me.RefreshBtn.Size = New System.Drawing.Size(105, 52)
+        Me.RefreshBtn.TabIndex = 28
+        Me.RefreshBtn.Text = "REFRESH"
         '
         'ProductListForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(14, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1032, 656)
+        Me.Controls.Add(Me.RefreshBtn)
+        Me.Controls.Add(Me.DeleteBtn)
+        Me.Controls.Add(Me.EditBtn)
+        Me.Controls.Add(Me.btnLogin)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lbltime)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Guna2Panel1)
-        Me.Controls.Add(Me.btnRefresh)
-        Me.Controls.Add(Me.btnDelete)
-        Me.Controls.Add(Me.btnEdit)
-        Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.dgvProducts)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ProductListForm"
@@ -325,16 +440,12 @@ Partial Class ProductListForm
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents dgvProducts As System.Windows.Forms.DataGridView
-    Friend WithEvents btnAdd As System.Windows.Forms.Button
-    Friend WithEvents btnEdit As System.Windows.Forms.Button
-    Friend WithEvents btnDelete As System.Windows.Forms.Button
-    Friend WithEvents btnRefresh As System.Windows.Forms.Button
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents btnLogout As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnReports As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnNewAudit As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnAdjustStock As Guna.UI2.WinForms.Guna2Button
@@ -342,4 +453,14 @@ Partial Class ProductListForm
     Friend WithEvents btnDashboard As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lblWelcome As System.Windows.Forms.Label
     Friend WithEvents txtSearch As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btnUserManagement As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents TimerColorReset As System.Windows.Forms.Timer
+    Friend WithEvents lbltime As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Private WithEvents btnLogin As Guna.UI2.WinForms.Guna2Button
+    Private WithEvents EditBtn As Guna.UI2.WinForms.Guna2Button
+    Private WithEvents DeleteBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnLogout As Guna.UI2.WinForms.Guna2Button
+    Private WithEvents RefreshBtn As Guna.UI2.WinForms.Guna2Button
 End Class
